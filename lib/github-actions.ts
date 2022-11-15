@@ -19,6 +19,7 @@ export class GithubActionsIdentityProvider extends OpenIdConnectProvider {
             // Official AWS GitHub Action https://github.com/aws-actions/configure-aws-credentials set audience to `sts.amazonaws.com` by default
             // https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services#adding-the-identity-provider-to-aws
             clientIds: ['sts.amazonaws.com'],
+            // TODO Can be removed as soon as following fix is released https://github.com/aws/aws-cdk/pull/22802
             thumbprints: GithubActionsIdentityProvider.issuerCertificateThumbprints,
         });
     }
