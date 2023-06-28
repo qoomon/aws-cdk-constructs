@@ -6,7 +6,9 @@ import {OpenIdConnectProviderProps} from "aws-cdk-lib/aws-iam/lib/oidc-provider"
 export class GithubActionsIdentityProvider extends OpenIdConnectProvider {
 
     public static readonly issuerDomain: string = 'token.actions.githubusercontent.com';
-    public static readonly issuerCertificateThumbprints: string[] = ['6938fd4d98bab03faadb97b34396831e3780aea1'];
+
+    // https://github.blog/changelog/2023-06-27-github-actions-update-on-oidc-integration-with-aws/
+    public static readonly issuerCertificateThumbprints: string[] = ['6938fd4d98bab03faadb97b34396831e3780aea1', '1c58a3a8518e8759bf075b76b750d4f2df264fcd'];
 
     /**
      * Defines the GitHub OpenID Connect provider.
